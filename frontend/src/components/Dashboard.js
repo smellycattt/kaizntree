@@ -26,7 +26,7 @@ function Dashboard() {
     setLoading(true);
     try {
       const token = localStorage.getItem('authToken');
-      let url = 'http://localhost:8000/api/items/';
+      let url = 'http://3.17.58.73:80/api/items/';
       if (orderBy) {
         url += `?ordering=${orderBy}`;
       }
@@ -45,7 +45,7 @@ const handleSearchChange = async (value) => {
   setSearchTerm(value)
   try {
     const token = localStorage.getItem('authToken');
-    const response = await axios.get(`http://localhost:8000/api/items/?search=${searchTerm}`, {
+    const response = await axios.get(`http://3.17.58.73:80/api/items/?search=${searchTerm}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -76,7 +76,7 @@ const handleAddItemModal = async () => {
       available_stock: itemAvailableStock,
       // other fields as necessary
     };
-    const response = await axios.post('http://localhost:8000/api/items/create/', newItemData, {
+    const response = await axios.post('http://3.17.58.73:80/api/items/create/', newItemData, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

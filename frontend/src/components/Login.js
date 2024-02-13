@@ -12,7 +12,7 @@ const Login = ({ onLoginSuccess }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/api/token/', {
+      const response = await axios.post('http://3.17.58.73:80/api/token/', {
         username,
         password
       }, { withCredentials: true }); // Only if you use HTTP-only cookies
